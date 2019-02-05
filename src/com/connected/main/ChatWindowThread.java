@@ -1,18 +1,23 @@
 package com.connected.main;
 
+import com.connected.controllers.ChatWindowController;
+import javafx.scene.layout.VBox;
+
 import java.net.Socket;
 import java.util.Scanner;
 
 public class ChatWindowThread extends Thread{
     private Socket socket;
-
-    public ChatWindowThread(Socket socket) {
+    private ChatWindowController chatWindowController;
+    public ChatWindowThread(Socket socket, ChatWindowController chatWindowController) {
         this.socket = socket;
+        this.chatWindowController=chatWindowController;
     }
 
     @Override
     public void run() {
         Scanner scanner = null;
+       VBox bubbleArea= chatWindowController.getBubbleArea();
         try {
             scanner = new Scanner(socket.getInputStream());
 

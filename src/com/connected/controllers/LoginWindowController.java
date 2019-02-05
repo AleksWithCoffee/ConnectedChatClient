@@ -6,17 +6,16 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-
 import com.connected.main.AccountWindow;
 import com.connected.main.ChatWindow;
 import javafx.stage.Stage;
-
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class LoginWindowController implements Initializable {
     private ChatWindow chatWindow;
     private AccountWindow accountWindow;
+
     @FXML
     private TextField nickField;
     @FXML
@@ -26,10 +25,12 @@ public class LoginWindowController implements Initializable {
     public void displayChatWindow(MouseEvent mouseEvent)throws Exception {
         if(!nickField.getText().equals("")&&!passwordField.getText().equals("")) {
                // database
-            chatWindow.displayChatWindow();
+            String nick=nickField.getText();
             Stage stage = (Stage) loginPane.getScene().getWindow();
+            System.out.println(nick);
+            ChatWindowController chatWindowController=chatWindow.displayChat(nick);
+            chatWindow.connect(nick,chatWindowController);
             stage.close();
-            chatWindow.connect(nickField.getText());
         }
     }
 
