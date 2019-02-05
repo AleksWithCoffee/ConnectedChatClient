@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.connected.controllers.ChatWindowController">
+    <children>
+        <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" layoutX="198.0" layoutY="55.0" prefHeight="317.0" prefWidth="401.0" style="-fx-background-color: #d4af37;" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="198.66666666666669" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="55.0">
+            <content>
+                <VBox fx:id="bubbleArea" prefHeight="313.0" prefWidth="397.0" />
+            </content>
+        </ScrollPane>
+        <AnchorPane layoutX="199.0" layoutY="371.0" prefHeight="29.0" prefWidth="401.0" style="-fx-background-color: #d4af37;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="199.0" AnchorPane.rightAnchor="0.0">
+            <children>
+                <TextField fx:id="typingField" layoutY="1.0" prefHeight="25.0" prefWidth="365.0" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="35.0" />
+                <ImageView onMouseClicked="#send" fx:id="sendImage" fitHeight="22.0" fitWidth="22.0" layoutX="365.0" layoutY="9.0" AnchorPane.bottomAnchor="3.0" AnchorPane.rightAnchor="10.0">
+                    <image>
+                        <Image url="@../resources/iconfinder_send_3671853.png" />
+                    </image>
+                </ImageView>
+            </children>
+            <effect>
+                <DropShadow height="8.5" radius="3.375" width="7.0" />
+            </effect>
+        </AnchorPane>
+        <AnchorPane layoutX="199.0" prefHeight="54.0" prefWidth="409.0" style="-fx-background-color: #d4af37;" AnchorPane.leftAnchor="199.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+
+                <Label layoutX="17.0" layoutY="20.0" prefHeight="17.0" prefWidth="197.0" text="Your nick: " />
+            </children>
+            <effect>
+                <DropShadow />
+            </effect>
+        </AnchorPane>
+      <AnchorPane layoutX="3.0" prefHeight="400.0" prefWidth="197.0" style="-fx-background-color: #424242;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ScrollPane hbarPolicy="NEVER" layoutX="14.0" layoutY="8.0" prefHeight="400.0" prefWidth="197.0" style="-fx-background-color: #424242;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <content>
+                  <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="197.0" style="-fx-background-color: #424242;">
+                     <children>
+                        <Label />
+                        <Label prefHeight="35.0" prefWidth="152.0" text="        Online: " textFill="#d4af37" />
+                        <Line endX="471.00982666015625" endY="-1.0356324911117554" startX="276.3835754394531" startY="-1.0356383323669434" stroke="#d4af37" strokeDashOffset="10.0" />
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+
+    </children>
+</AnchorPane>

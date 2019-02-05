@@ -1,0 +1,7 @@
+.chat-bubble {
+    -fx-shape: "M 150 300 Q 150 250 200 250 L 600 250 Q 650 250 650 300 L 650 350 Q 650 400 600 400 L 200 400 Q 150 400 150 350 L 150 300  ";
+    -fx-background-color: #c5b538;
+
+    -fx-text-fill:#ffffff;
+
+}
